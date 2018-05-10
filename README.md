@@ -11,12 +11,19 @@
 
 ### 使い方
 ひとまずコマンドだけを書いときます。
-* % docker-compose run web rails new . --force --database=postgresql
-* % docker-compose build
-* % cp config-database.yml config/database.yml
-* % docker-compose up
-* (Ctrl-Cでプロセスを落とす)
-* % docker-compose run web rake db:create
-* % docker-compose up
-これでrailsサーバが立ち上がっているはず。
-* % mv dot.gitignore .gitignore 
+
+1. railsプロジェクトを作ります
+> % docker-compose run web rails new . --force --database=postgresql
+2. ビルドします
+> % docker-compose build
+3. データベース設定をする（config/database.ymlは適当に書き換えてね）
+> % cp config-database.yml config/database.yml
+4. railsサーバを立ち上げる
+> * % docker-compose up
+> * (Ctrl-Cでプロセスを落とす)
+5. データベースを作る
+> * % docker-compose run web rake db:create
+5. railsサーバを立ち上げる
+> % docker-compose up
+6. git無視ファイル設定をdot.gitignoreをコピーして、自分用に書き換える。
+> % mv dot.gitignore .gitignore 
