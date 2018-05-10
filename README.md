@@ -12,18 +12,27 @@
 ### 使い方
 ひとまずコマンドだけを書いときます。
 
-1. railsプロジェクトを作ります
+1. このフォルダをクローンして、ディレクトリ名を書き換えて、githubのリモートレポジトリを変更する
+
+```
+ % git clone https://github.com/enpitut2018/docker-rails-conf
+ % cd .. 
+ % mv docker-rails-conf <新しいディレクトリ名>
+ % cd <新しいディレクトリ名>
+ % git remote set-url origin <新しいレポジトリ名>
+```
+2. railsプロジェクトを作ります
 > % docker-compose run web rails new . --force --database=postgresql
-2. ビルドします
+3. ビルドします
 > % docker-compose build
-3. データベース設定をする（config/database.ymlは適当に書き換えてね）
+4. データベース設定をする（config/database.ymlは適当に書き換えてね）
 > % cp config-database.yml config/database.yml
-4. railsサーバを立ち上げる
+5. railsサーバを立ち上げる
 > * % docker-compose up
 > * (Ctrl-Cでプロセスを落とす)
-5. データベースを作る
+6. データベースを作る
 > * % docker-compose run web rake db:create
-5. railsサーバを立ち上げる
+7. railsサーバを立ち上げる
 > % docker-compose up
-6. git無視ファイル設定をdot.gitignoreをコピーして、自分用に書き換える。
+8. git無視ファイル設定をdot.gitignoreをコピーして、自分用に書き換える。
 > % mv dot.gitignore .gitignore 
