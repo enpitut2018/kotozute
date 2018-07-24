@@ -1,13 +1,53 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @lecture.name %>
+  <strong>Class name:</strong>
+  <%= @lecture.class_name %>
 </p>
 
 <p>
-  <strong>Contents:</strong>
-  <%= @lecture.contents %>
+  <strong>Class:</strong>
+  <%= @lecture.class_id %>
+</p>
+
+<p>
+  <strong>Evaluation:</strong>
+  <%= @lecture.evaluation %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @lecture.grade %>
+</p>
+
+<p>
+  <strong>Module:</strong>
+  <%= @lecture.module %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @lecture.department %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @lecture.room %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @lecture.day %>
+</p>
+
+<p>
+  <strong>Period:</strong>
+  <%= @lecture.period %>
+</p>
+
+<p>
+  <strong>Attendance:</strong>
+  <%= @lecture.attendance %>
 </p>
 
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> |
