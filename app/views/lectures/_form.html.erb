@@ -12,19 +12,54 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :lecture_name %>
+    <%= form.label :class_name %>
+    <%= form.text_field :class_name, id: :lecture_class_name %>
   </div>
 
   <div class="field">
-    <%= form.label :contents %>
-    <%= form.text_field :contents, id: :lecture_contents %>
+    <%= form.label :class_id %>
+    <%= form.text_field :class_id, id: :lecture_class_id %>
   </div>
 
   <div class="field">
-  <%= form.label :grade %>
-  <%= form.text_field :grade, id: :lecture_grade %>
-</div>
+    <%= form.label :evaluation %>
+    <%= form.text_field :evaluation, id: :lecture_evaluation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grade %>
+    <%= form.text_field :grade, id: :lecture_grade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :module %>
+    <%= form.text_field :module, id: :lecture_module %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department %>
+    <%= form.text_field :department, id: :lecture_department %>
+  </div>
+
+  <div class="field">
+    <%= form.label :room %>
+    <%= form.text_field :room, id: :lecture_room %>
+  </div>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.text_field :day, id: :lecture_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :period %>
+    <%= form.text_field :period, id: :lecture_period %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attendance %>
+    <%= form.text_field :attendance, id: :lecture_attendance %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
