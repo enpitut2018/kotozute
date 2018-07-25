@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  comment: MyString
+  satisfaction: 1
+  Lectures: one
+
+two:
+  comment: MyString
+  satisfaction: 1
+  Lectures: two
