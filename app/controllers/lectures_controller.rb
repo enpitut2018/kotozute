@@ -21,6 +21,10 @@ class LecturesController < ApplicationController
   def edit
   end
 
+    # GET /lectures/search
+    def search
+    end
+
   # POST /lectures
   # POST /lectures.json
   def create
