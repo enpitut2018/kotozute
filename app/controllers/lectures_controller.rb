@@ -11,7 +11,7 @@ class LecturesController < ApplicationController
   # GET /lectures/1.json
   def show
     @lecture = Lecture.find(params[:id])
-    @user_voices = @lecture.user_voices
+    @user_voice = @lecture.user_voices
   end
 
   # GET /lectures/new

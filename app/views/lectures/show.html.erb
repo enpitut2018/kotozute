@@ -53,7 +53,7 @@
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> 
 
 <% if @lecture.user_voices.any? %>
-  <% @user_voices.each do |user_voice| %>
+  <% @user_voice.each do |user_voice| %>
     <p>
       <strong>コメント:</strong>
       <td><%= user_voice.comment %></td>
@@ -62,6 +62,8 @@
       <strong>満足度:</strong>
       <td><%= user_voice.satisfaction %></td>
     </p>
+    <% @user_id = {:lecture_id => @lecture.id, :user_voice_id => user_voice.id} %>
+    <td><%= link_to 'Destroy', lecture_user_voice_path(@user_id) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% end %>
 <% end %>
 
