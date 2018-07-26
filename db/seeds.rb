@@ -29,6 +29,6 @@
 require 'csv'
 
 CSV.foreach('db/master_data.csv', encoding: 'Shift_JIS:UTF-8') do |row|
-  Lecture.create(:class_name => row[1], :class_id=> row[0])
+  Lecture.create(:class_name => row[1], :class_id => row[0], :grade => row[4], :module => row[5] , :room => row[7] , :period => row[6], :professer => row[8], :form => row[2].to_i , :unit => row[3].to_f ,:contents => row[9] , :remarks => row[10] , :e_name => row[13])
 end
 #=end
