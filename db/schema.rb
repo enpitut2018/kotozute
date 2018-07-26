@@ -31,13 +31,13 @@ ActiveRecord::Schema.define(version: 20180725034044) do
   end
 
   create_table "user_voices", force: :cascade do |t|
-    t.string "comment"
+    t.text "comment"
     t.integer "satisfaction"
-    t.bigint "lectures_id"
+    t.bigint "lecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lectures_id"], name: "index_user_voices_on_lectures_id"
+    t.index ["lecture_id"], name: "index_user_voices_on_lecture_id"
   end
 
-  add_foreign_key "user_voices", "lectures", column: "lectures_id"
+  add_foreign_key "user_voices", "lectures"
 end

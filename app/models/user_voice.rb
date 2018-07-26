@@ -1,3 +1,3 @@
 class UserVoice < ApplicationRecord
-  belongs_to :Lectures
+  belongs_to :lecture
 end
