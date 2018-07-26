@@ -1,13 +1,12 @@
 
 
-<h1>Search</h1>
-
+<h1>言伝 -Kotozute-</h1>
 
 <tbody>
 <%= form_tag lectures_path, :method => 'get' do %>
     <p>
       <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", :name => nil %>
+      <%= submit_tag "検索", :name => nil %>
     </p>
   <% end %>
    
@@ -15,3 +14,4 @@
   <%= yield %>
    
 </tbody>
+

@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ <@charset "UTF-8";>
+ h1 {font-size: 30px}
+ h1 {font-family: serif }
