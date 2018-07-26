@@ -14,14 +14,6 @@
     <% @lectures.each do |lecture| %>
       <tr>
         <td><%= lecture.class_name %></td>
-        <td><%= lecture.class_id %></td>
-        <td><%= lecture.evaluation %></td>
-        <td><%= lecture.grade %></td>
-        <td><%= lecture.module %></td>
-        <td><%= lecture.department %></td>
-        <td><%= lecture.room %></td>
-        <td><%= lecture.period %></td>
-        <td><%= lecture.attendance %></td>
         <td><%= link_to 'Show', lecture %></td>
         <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
         <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
