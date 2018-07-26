@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lectures</h1>
+<h1>検索結果</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>授業名</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,10 +13,10 @@
   <tbody>
     <% @lectures.each do |lecture| %>
       <tr>
-        <td width="300" align="center"><%= lecture.class_name %></td>
-        <td><%= link_to 'Show', lecture %></td>
-        <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
-        <td><%= link_to 'Destroy', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td width="200"><%= lecture.class_name %></td>
+        <td><%= link_to '詳細&コメント', lecture %></td>
+        <td><%= link_to '編集', edit_lecture_path(lecture) %></td>
+        <td><%= link_to '削除', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
