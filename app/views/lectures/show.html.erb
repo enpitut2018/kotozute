@@ -50,5 +50,21 @@
   <%= @lecture.attendance %>
 </p>
 
-<%= link_to 'Edit', edit_lecture_path(@lecture) %> |
+<%= link_to 'Edit', edit_lecture_path(@lecture) %> 
+
+<% if @lecture.user_voices.any? %>
+  <% @user_voices.each do |user_voice| %>
+    <p>
+      <strong>コメント:</strong>
+      <td><%= user_voice.comment %></td>
+    </p>
+    <p>
+      <strong>満足度:</strong>
+      <td><%= user_voice.satisfaction %></td>
+    </p>
+  <% end %>
+<% end %>
+
+<%= link_to 'New comment', new_lecture_user_voice_path(@lecture) %>
+
 <%= link_to 'Back', lectures_path %>
