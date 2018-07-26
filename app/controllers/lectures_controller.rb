@@ -4,7 +4,7 @@ class LecturesController < ApplicationController
   # GET /lectures
   # GET /lectures.json
   def index
-    @lectures = Lecture.all
+    @lectures = Lecture.search(params[:search])
   end
 
   # GET /lectures/1
@@ -22,6 +22,10 @@ class LecturesController < ApplicationController
   # GET /lectures/1/edit
   def edit
   end
+
+    # GET /lectures/search
+    def search
+    end
 
   # POST /lectures
   # POST /lectures.json
