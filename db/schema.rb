@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180725034044) do
+ActiveRecord::Schema.define(version: 20180726012952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,15 +23,21 @@ ActiveRecord::Schema.define(version: 20180725034044) do
     t.string "module"
     t.string "department"
     t.string "room"
-    t.string "day"
     t.string "period"
     t.string "attendance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "professer"
+    t.string "class_kind"
+    t.integer "form"
+    t.float "unit"
+    t.text "contents"
+    t.text "remarks"
+    t.text "e_name"
   end
 
   create_table "user_voices", force: :cascade do |t|
-    t.string "comment"
+    t.text "comment"
     t.integer "satisfaction"
     t.bigint "lectures_id"
     t.datetime "created_at", null: false
