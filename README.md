@@ -5,20 +5,13 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* 言伝~Kotozute~
 
-* System dependencies
+* 「この講義思ってたのと違う・・・」を解決したい
+    筑波大生向けの感想機能つきシラバスのkotozuteです。
+    これは授業に関するコメントや、満足度を入力・閲覧することができ、
+    kdbと違ってシラバスにない情報まで知る事ができます。
 
-* Configuration
+* https://kotozute.herokuapp.com
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* 永瀬拓也https://github.com/NagaTaku
