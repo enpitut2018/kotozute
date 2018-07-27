@@ -11,16 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :class_name %>
-    <%= form.text_field :class_name, id: :lecture_class_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :class_id %>
-    <%= form.text_field :class_id, id: :lecture_class_id %>
-  </div>
-
+  <p>授業名：<%= lecture.class_name %></p>
+  
+  <p>科目番号：<%= lecture.class_id %></p>
+  
   <div class="field">
     <%= form.label :evaluation %>
     <%= form.text_field :evaluation, id: :lecture_evaluation %>
