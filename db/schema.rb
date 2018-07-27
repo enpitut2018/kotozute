@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20180726012952) do
 
   # These are extensions that must be enabled in order to support this database
@@ -38,13 +37,13 @@ ActiveRecord::Schema.define(version: 20180726012952) do
   end
 
   create_table "user_voices", force: :cascade do |t|
-    t.text "comment"
+    t.string "comment"
     t.integer "satisfaction"
-    t.bigint "lecture_id"
+    t.bigint "lectures_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lecture_id"], name: "index_user_voices_on_lecture_id"
+    t.index ["lectures_id"], name: "index_user_voices_on_lectures_id"
   end
 
-  add_foreign_key "user_voices", "lectures"
+  add_foreign_key "user_voices", "lectures", column: "lectures_id"
 end
