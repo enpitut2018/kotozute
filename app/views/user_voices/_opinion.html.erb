@@ -13,17 +13,18 @@
 
 
     <div class="field">
-      <%= form.label :comment %>
+      <%= form.label :comment, "言伝" %>
       <%= form.text_field :comment, id: :user_voice_comment %>
     </div>
   
     <div class="field">
-      <%= form.label :satisfaction %>
+      <%= form.label :satisfaction, "授業満足度" %>
       <%= form.select :satisfaction, ["--", 1, 2, 3, 4, 5] %>
     </div>
   
     <div class="actions">
-      <%= form.submit %>
+      
+      <%= form.submit(["言伝を残す"]) %>
     </div>
   <% end %>
   
