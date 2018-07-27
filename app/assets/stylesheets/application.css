@@ -18,7 +18,8 @@
  h1 {font-size: 30px}
  h1 {font-family: serif }
 
-
+#class_detail {float:left; width : calc(100% / 3) ;}
+#class_comment {float:right; width : calc(200% / 3) ;}
 
 tr:nth-child(2n+1) {
     background: #F0FFFF;
