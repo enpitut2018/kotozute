@@ -17,3 +17,9 @@
  @charset "UTF-8";
  h1 {font-size: 30px}
  h1 {font-family: serif }
+
+
+
+tr:nth-child(2n+1) {
+    background: #F0FFFF;
+}
