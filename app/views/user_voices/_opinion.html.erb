@@ -19,7 +19,7 @@
   
     <div class="field">
       <%= form.label :satisfaction %>
-      <%= form.text_field :satisfaction, id: :user_voice_satisfaction %>
+      <%= form.select :satisfaction, ["--", 1, 2, 3, 4, 5] %>
     </div>
   
     <div class="actions">
