@@ -14,3 +14,4 @@
 * 永瀬拓也https://github.com/NagaTaku
 * 饒波美香 https://github.com/MikaNoha
 * 前田祐紀 https://github.com/YuukiMAEDA
+* 水越裕乃 https://github.com/NiwataN
