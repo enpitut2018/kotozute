@@ -22,4 +22,10 @@
 #class_comment {float:right; width : calc(200% / 3) ;}
 
 
-table.search_result tr:nth-child(2n+1) {background-color:#FFCCCC;}
+table.search_result tr:nth-child(2n+1) {background-color:#add8e6;}
+thead{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
