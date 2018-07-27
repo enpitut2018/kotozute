@@ -11,7 +11,7 @@
 https://kotozute.herokuapp.com
 
 * メンバー：
-[永瀬拓也](https://github.com/NagaTaku)
-[饒波美香](https://github.com/MikaNoha)
-[前田祐紀](https://github.com/YuukiMAEDA)
-[水越裕乃](https://github.com/NiwataN)
+[永瀬拓也](https://github.com/NagaTaku)  
+[饒波美香](https://github.com/MikaNoha)  
+[前田祐紀](https://github.com/YuukiMAEDA)  
+[水越裕乃](https://github.com/NiwataN)  
