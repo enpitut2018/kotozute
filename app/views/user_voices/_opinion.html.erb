@@ -19,8 +19,13 @@
   
     <div class="field">
       <%= form.label :satisfaction, "授業満足度" %>
-      <%= form.select :satisfaction, ["--", 1, 2, 3, 4, 5] %>
-    </div>
+      <label><%= form.radio_button :satisfaction, "--" , {:checked => true}%>--</label>
+      <label><%= form.radio_button :satisfaction, "1" %>1</label>
+      <label><%= form.radio_button :satisfaction, "2" %>2</label>
+      <label><%= form.radio_button :satisfaction, "3" %>3</label>
+      <label><%= form.radio_button :satisfaction, "4" %>4</label>
+      <label><%= form.radio_button :satisfaction, "5" %>5</label>
+      </div>
   
     <div class="actions">
       
