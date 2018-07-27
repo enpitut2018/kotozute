@@ -1,85 +1,115 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Class name:</strong>
-  <%= @lecture.class_name %>
-</p>
+<body>
+  <div>
+    <h2><%= @lecture.class_name %><h2>
+  </div>
 
-<p>
-  <strong>Class:</strong>
-  <%= @lecture.class_id %>
-</p>
+  <div class="center" id="class_detail">
+    <p>授業情報</p>
+    <table border="1" width="90%">
+      <tr>
+        <td><strong>科目名</strong></td>
+        <td><%= @lecture.class_name %></td>
+      </tr>
+      <tr>
+        <td><strong>科目番号</strong></td>
+        <td><%= @lecture.class_id %></td>
+      </tr>
+      <tr>
+        <td><strong>評価方法</strong></td>
+        <td><%= @lecture.evaluation %></td>
+      </tr>
+      <tr>
+        <td><strong>年次</strong></td>
+        <td><%= @lecture.grade %></td>
+      </tr>
+      <tr>
+        <td><strong>学期</strong></td>
+        <td><%= @lecture.module %></td>
+      </tr>
+      <tr>
+        <td><strong>開設学類</strong></td>
+        <td><%= @lecture.department %></td>
+      </tr>
+      <tr>
+        <td><strong>教室</strong></td>
+        <td><%= @lecture.room %></td>
+      </tr>
+      <tr>
+        <td><strong>曜時限</strong></td>
+        <td><%= @lecture.period %></td>
+      </tr>
+      <tr>
+        <td><strong>出席方法</strong></td>
+        <td><%= @lecture.attendance %></td>
+      </tr>
+      <tr>
+        <td><strong>担当</strong></td>
+        <td><%= @lecture.professer %></td>
+      </tr>
+      <tr>
+        <td><strong>科目区分</strong></td>
+        <td><%= @lecture.class_kind %></td>
+      </tr>
+      <tr>
+        <td><strong>授業方法</strong></td>
+        <td><%= @lecture.form %></td>
+      </tr>
+      <tr>
+        <td><strong>単位</strong></td>
+        <td><%= @lecture.unit %></td>
+      </tr>
+      <tr>
+        <td><strong>概要</strong></td>
+        <td><%= @lecture.contents %></td>
+      </tr>
+      <tr>
+        <td><strong>備考</strong></td>
+        <td><%= @lecture.remarks %></td>
+      </tr>
+      <tr>
+        <td><strong>科目名(英訳)</strong></td>
+        <td><%= @lecture.e_name %></td>
+      </tr>
+    </table>
 
-<p>
-  <strong>Evaluation:</strong>
-  <%= @lecture.evaluation %>
-</p>
+    <%= link_to 'Edit', edit_lecture_path(@lecture) %>
+  </div>
 
-<p>
-  <strong>Grade:</strong>
-  <%= @lecture.grade %>
-</p>
+  <div id="class_comment">
+    <% if @lecture.user_voices.any? %>
+       <% sum = 0 %>
+       <% num = 0 %>
+       <% @user_voice.each do |user_voice| %>
+          <% man = user_voice.satisfaction %>
+          <% sum = sum + man %>
+          <% num = num + 1 %>
+       <% end %>
 
-<p>
-  <strong>Module:</strong>
-  <%= @lecture.module %>
-</p>
+       <% ave = sum / num %>
+       <p>
+          <strong>平均満足度:</strong>
+          <td><%= ave %></td>
+        </p>
 
-<p>
-  <strong>Department:</strong>
-  <%= @lecture.department %>
-</p>
+    <% end %>
 
-<p>
-  <strong>Room:</strong>
-  <%= @lecture.room %>
-</p>
+    <% if @lecture.user_voices.any? %>
+      <table border="1" width="100%">
+      <% @user_voice.each_with_index.reverse_each do |user_voice,i| %>
+        <tr>
+          <td width="5%"><%= i+1 =%></td>
+          <td width="85%"><%= user_voice.comment %></td>
+          <td width="10%"><%= user_voice.satisfaction %></td>
 
+          <% @user_id = {:lecture_id => @lecture.id, :user_voice_id => user_voice.id} %>
+          <td width="10%"><%= link_to 'Destroy', lecture_user_voice_path(@user_id) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      </table>
+    <% end %>
 
-<p>
-  <strong>Period:</strong>
-  <%= @lecture.period %>
-</p>
-
-<p>
-  <strong>Attendance:</strong>
-  <%= @lecture.attendance %>
-</p>
-
-<%= link_to 'Edit', edit_lecture_path(@lecture) %> 
-
-<% if @lecture.user_voices.any? %>
-   <% sum = 0 %>
-   <% num = 0 %>
-   <% @user_voice.each do |user_voice| %>
-      <% man = user_voice.satisfaction %>
-      <% sum = sum + man %>
-      <% num = num + 1 %>  
-   <% end %>
-  
-   <% ave = sum / num %>
-   <p>
-      <strong>平均満足度:</strong>
-      <td><%= ave %></td>
-    </p>
-
-<% end %>
-
-<% if @lecture.user_voices.any? %>
-  <% @user_voice.each do |user_voice| %>
-    <p>
-      <strong>コメント:</strong>
-      <td><%= user_voice.comment %></td>
-    </p>
-    <p>
-      <strong>満足度:</strong>
-      <td><%= user_voice.satisfaction %></td>
-    </p>
-    <% @user_id = {:lecture_id => @lecture.id, :user_voice_id => user_voice.id} %>
-    <td><%= link_to 'Destroy', lecture_user_voice_path(@user_id) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  <% end %>
-<% end %>
-
-<%= link_to 'New comment', new_lecture_user_voice_path(@lecture) %>
-
-<%= link_to 'Back', lectures_path %>
+    <%= link_to 'New comment', new_lecture_user_voice_path(@lecture) %>
+  </div>
+</body>
