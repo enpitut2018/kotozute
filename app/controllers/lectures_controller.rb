@@ -4,7 +4,7 @@ class LecturesController < ApplicationController
   # GET /lectures
   # GET /lectures.json
   def index
-    @lectures = Lecture.search(params[:search])
+    @lectures = Lecture::csearch(params[:name_search], params[:module_search])
     @lectures = @lectures.paginate(page: params[:page], :per_page => 15)
   end
 

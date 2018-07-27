@@ -5,13 +5,13 @@
 <tbody>
 <%= form_tag lectures_path, :method => 'get' do %>
     <p>
-      <%= text_field_tag :search, params[:search] %>
+      科目名<%= text_field_tag 'name_search' %><br>
+      モジュール<%= text_field_tag 'module_search' %>
       <%= submit_tag "検索", :name => nil %>
     </p>
   <% end %>
-   
-   
-  <%= yield %>
-   
-</tbody>
 
+
+  <%= yield %>
+
+</tbody>
