@@ -49,6 +49,23 @@
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> 
 
 <% if @lecture.user_voices.any? %>
+   <% sum = 0 %>
+   <% num = 0 %>
+   <% @user_voice.each do |user_voice| %>
+      <% man = user_voice.satisfaction %>
+      <% sum = sum + man %>
+      <% num = num + 1 %>  
+   <% end %>
+  
+   <% ave = sum / num %>
+   <p>
+      <strong>平均満足度:</strong>
+      <td><%= ave %></td>
+    </p>
+
+<% end %>
+
+<% if @lecture.user_voices.any? %>
   <% @user_voice.each do |user_voice| %>
     <p>
       <strong>コメント:</strong>

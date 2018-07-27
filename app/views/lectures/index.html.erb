@@ -9,7 +9,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  <%= will_paginate %>
   <tbody>
     <% @lectures.each do |lecture| %>
       <tr>
@@ -23,5 +23,6 @@
 </table>
 
 <br>
+
 
 <%= link_to 'New Lecture', new_lecture_path %>
