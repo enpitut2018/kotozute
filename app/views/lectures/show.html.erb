@@ -5,8 +5,6 @@
     <h2><%= @lecture.class_name %><h2>
   </div>
   
-  <div align="right"><h3><%= link_to "言伝〜Kotozute〜", root_path %></h3></div>
-  
   <div class="center" id="class_detail">
     <p>授業情報　<%= link_to '(編集)', edit_lecture_path(@lecture) %> </p>
     <table border="1" width="90%">
@@ -121,8 +119,7 @@
       </table>
     <% end %>
 
-    
-    
-    <%= link_to 'Back', lectures_path %>
+    <hr>
+    <div><%= link_to '検索結果一覧に戻る', :back %></div><br>
   </div>
 </body>
