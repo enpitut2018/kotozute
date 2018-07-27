@@ -21,6 +21,5 @@
 #class_detail {float:left; width : calc(100% / 3) ;}
 #class_comment {float:right; width : calc(200% / 3) ;}
 
-tr:nth-child(2n+1) {
-    background: #F0FFFF;
-}
+
+table.search_result tr:nth-child(2n+1) {background-color:#FFCCCC;}
