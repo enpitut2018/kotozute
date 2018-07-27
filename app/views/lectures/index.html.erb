@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>検索結果</h1>
+<h1><a href="https://kotozute.herokuapp.com">言伝~Kotozute~</a></h1>
+
+<h2>検索結果</h2>
 
 <tbody>
 <%= form_tag lectures_path, :method => 'get' do %>
@@ -27,9 +29,6 @@
       <th bgcolor="white">曜時限</th>
       <th bgcolor="white">担当</th>
       <th bgcolor="white">単位数</th>
-      <th bgcolor="white">詳細＆コメント</th>
-      <th bgcolor="white">編集</th>
-
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -37,7 +36,7 @@
   <tbody>
     <% @lectures.each do |lecture| %>
       <tr>
-          <td width="200"><%= lecture.class_name %></td>
+          <td width="200"><%= link_to lecture.class_name, lecture %></td>
           <td width="150"><%= lecture.class_id %></td>
           <td width="600"><%= lecture.contents %></td>
           <td width="150"><%= lecture.grade %></td>
@@ -46,8 +45,6 @@
           <td width="100"><%= lecture.period %></td>
           <td width="300"><%= lecture.professer %></td>
           <td width="200"><%= lecture.unit %></td>
-          <td width="300"><%= link_to '詳細&コメント', lecture %></td>
-          <td width="100"><%= link_to '編集', edit_lecture_path(lecture) %></td>
       </tr>
     <% end %>
   </tbody>
