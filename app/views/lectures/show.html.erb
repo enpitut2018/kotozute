@@ -58,8 +58,12 @@
         <% num = num + 1 %>  
       <% end %>
    <% end %>
-  
+
+  <% if num != 0 %>
     <% ave = sum / num %>
+  <% else %>
+    <% ave = sum %>
+  <% end %>
    <p>
       <strong>平均満足度:</strong>
       <td><%= ave.round(2) %></td>
