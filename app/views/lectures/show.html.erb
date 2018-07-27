@@ -84,10 +84,16 @@
        <% @user_voice.each do |user_voice| %>
           <% man = user_voice.satisfaction %>
           <% sum = sum + man %>
-          <% num = num + 1 %>
+          <% if user_voice.satisfaction != 0 %>
+            <% num = num + 1 %>  
+          <% end %>
        <% end %>
 
-       <% ave = sum / num %>
+       <% if num != 0 %>
+         <% ave = sum / num %>
+       <% else %>
+         <% ave = sum %>
+       <% end %>
        <p>
           <strong>平均満足度:</strong>
           <td><%= ave %></td>
@@ -101,8 +107,12 @@
         <tr>
           <td width="5%"><%= i+1 =%></td>
           <td width="85%"><%= user_voice.comment %></td>
-          <td width="10%"><%= user_voice.satisfaction %></td>
-
+          <% if user_voice.satisfaction == 0 %>
+            <td width="10%">--</td>
+          <% else %>
+            <td width="10%"><%= user_voice.satisfaction  %></td>
+          <% end %>
+ 
           <% @user_id = {:lecture_id => @lecture.id, :user_voice_id => user_voice.id} %>
           <td width="10%"><%= link_to 'Destroy', lecture_user_voice_path(@user_id) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
@@ -111,5 +121,7 @@
     <% end %>
 
     <%= link_to 'New comment', new_lecture_user_voice_path(@lecture) %>
+    
+    <%= link_to 'Back', lectures_path %>
   </div>
 </body>

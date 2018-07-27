@@ -2,10 +2,34 @@
 
 <h1>検索結果</h1>
 
-<table>
+<tbody>
+<%= form_tag lectures_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "検索", :name => nil %>
+    </p>
+  <% end %>
+
+
+  <%= yield %>
+
+</tbody>
+
+<table border = "1"　>
   <thead>
     <tr>
-      <th>授業名</th>
+      <th bgcolor="white">授業名</th>
+      <th bgcolor="white">科目番号</th>
+      <th bgcolor="white">概要</th>
+      <th bgcolor="white">年次</th>
+      <th bgcolor="white">学期</th>
+      <th bgcolor="white">教室</th>
+      <th bgcolor="white">曜時限</th>
+      <th bgcolor="white">担当</th>
+      <th bgcolor="white">単位数</th>
+      <th bgcolor="white">詳細＆コメント</th>
+      <th bgcolor="white">編集</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,16 +37,20 @@
   <tbody>
     <% @lectures.each do |lecture| %>
       <tr>
-        <td width="200"><%= lecture.class_name %></td>
-        <td><%= link_to '詳細&コメント', lecture %></td>
-        <td><%= link_to '編集', edit_lecture_path(lecture) %></td>
-        <td><%= link_to '削除', lecture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td width="200"><%= lecture.class_name %></td>
+          <td width="150"><%= lecture.class_id %></td>
+          <td width="600"><%= lecture.contents %></td>
+          <td width="150"><%= lecture.grade %></td>
+          <td width="100"><%= lecture.module %></td>
+          <td width="100"><%= lecture.room %></td>
+          <td width="100"><%= lecture.period %></td>
+          <td width="300"><%= lecture.professer %></td>
+          <td width="200"><%= lecture.unit %></td>
+          <td width="300"><%= link_to '詳細&コメント', lecture %></td>
+          <td width="100"><%= link_to '編集', edit_lecture_path(lecture) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-
-<%= link_to 'New Lecture', new_lecture_path %>

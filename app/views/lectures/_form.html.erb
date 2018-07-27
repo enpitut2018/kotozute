@@ -16,40 +16,69 @@
   <p>科目番号：<%= lecture.class_id %></p>
   
   <div class="field">
-    <%= form.label :evaluation %>
+    <%= form.label :evaluation, "単位取得条件・成績評価基準" %>
     <%= form.text_field :evaluation, id: :lecture_evaluation %>
   </div>
 
   <div class="field">
-    <%= form.label :grade %>
+    <%= form.label :grade, "年次" %>
     <%= form.text_field :grade, id: :lecture_grade %>
   </div>
 
   <div class="field">
-    <%= form.label :module %>
+    <%= form.label :module, "学期"%>
     <%= form.text_field :module, id: :lecture_module %>
   </div>
 
   <div class="field">
-    <%= form.label :department %>
+    <%= form.label :department, "開設学類"%>
     <%= form.text_field :department, id: :lecture_department %>
   </div>
 
   <div class="field">
-    <%= form.label :room %>
+    <%= form.label :room, "教室" %>
     <%= form.text_field :room, id: :lecture_room %>
   </div>
 
   <div class="field">
-    <%= form.label :period %>
+    <%= form.label :period, "曜時限" %>
     <%= form.text_field :period, id: :lecture_period %>
   </div>
 
   <div class="field">
-    <%= form.label :attendance %>
+    <%= form.label :attendance, "出席方法" %>
     <%= form.text_field :attendance, id: :lecture_attendance %>
   </div>
 
+  <div class="field">
+    <%= form.label :professer, "担当" %>
+    <%= form.text_field :professer, id: :lecture_professer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :class_kind, "科目区分" %>
+    <%= form.text_field :class_kind, id: :lecture_class_kind %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :form, "授業方法" %>
+    <%= form.text_field :form, id: :lecture_form %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :unit, "単位" %>
+    <%= form.text_field :unit, id: :lecture_unit %>
+  </div>
+  
+  <p>概要：<%= lecture.contents %></p>
+  
+  <div class="field">
+    <%= form.label :remarks, "備考" %>
+    <%= form.text_field :remarks, id: :lecture_remarks %>
+  </div>
+ 
+  <p>科目名（英訳）：<%= lecture.e_name %></p>
+  
   <div class="actions">
     <%= form.submit %>
   </div>
