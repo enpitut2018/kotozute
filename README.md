@@ -16,4 +16,6 @@ https://kotozute.herokuapp.com
 [前田祐紀](https://github.com/YuukiMAEDA)  
 [水越裕乃](https://github.com/NiwataN)  
 [松戸直樹](https://github.com/naokimatsudo)  
-[桧山莉沙](https://github.com/LisaHiyama)
+[桧山莉沙](https://github.com/LisaHiyama) 
+[齊藤駿平](https://github.com/pe50)  
+
