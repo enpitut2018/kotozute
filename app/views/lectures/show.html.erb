@@ -4,9 +4,9 @@
   <div>
     <h2><%= @lecture.class_name %><h2>
   </div>
-
+  
   <div class="center" id="class_detail">
-    <p>授業情報</p>
+    <p>授業情報　<%= link_to '(編集)', edit_lecture_path(@lecture) %> </p>
     <table border="1" width="90%">
       <tr>
         <td><strong>科目名</strong></td>
@@ -73,8 +73,7 @@
         <td><%= @lecture.e_name %></td>
       </tr>
     </table>
-
-    <%= link_to 'Edit', edit_lecture_path(@lecture) %>
+    
   </div>
 
   <div id="class_comment">
@@ -90,17 +89,17 @@
        <% end %>
 
        <% if num != 0 %>
-         <% ave = sum / num %>
+         <% ave = sum.to_f / num %>
        <% else %>
          <% ave = sum %>
        <% end %>
        <p>
           <strong>平均満足度:</strong>
-          <td><%= ave %></td>
+          <td><%= ave.round(2) %></td>
         </p>
 
     <% end %>
-
+    <%= link_to '新しい言伝（授業満足度・コメント）を残す', new_lecture_user_voice_path(@lecture) %>
     <% if @lecture.user_voices.any? %>
       <table border="1" width="100%">
       <% @user_voice.each_with_index.reverse_each do |user_voice,i| %>
@@ -120,8 +119,7 @@
       </table>
     <% end %>
 
-    <%= link_to 'New comment', new_lecture_user_voice_path(@lecture) %>
-    
-    <%= link_to 'Back', lectures_path %>
+    <hr>
+    <div><%= link_to '検索結果一覧に戻る', :back %></div><br>
   </div>
 </body>
