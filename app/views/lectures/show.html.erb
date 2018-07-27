@@ -1,50 +1,69 @@
+<div>
+
+<div>
+<h1><%= @lecture.class_name %></h1>
+</div>
+
+<div></div>
+
+<div>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Class name:</strong>
-  <%= @lecture.class_name %>
-</p>
-
-<p>
-  <strong>Class:</strong>
+  <strong>科目番号:</strong>
   <%= @lecture.class_id %>
 </p>
 
 <p>
-  <strong>Evaluation:</strong>
+  <strong>単位数:</strong>
+  <%= @lecture.unit %>
+</p>
+
+<p>
+  <strong>評価方法:</strong>
   <%= @lecture.evaluation %>
 </p>
 
 <p>
-  <strong>Grade:</strong>
+  <strong>標準履修学年:</strong>
   <%= @lecture.grade %>
 </p>
 
 <p>
-  <strong>Module:</strong>
+  <strong>開設モジュール:</strong>
   <%= @lecture.module %>
 </p>
 
 <p>
-  <strong>Department:</strong>
+  <strong>開設学類:</strong>
   <%= @lecture.department %>
 </p>
 
 <p>
-  <strong>Room:</strong>
+  <strong>教室:</strong>
   <%= @lecture.room %>
 </p>
 
 
 <p>
-  <strong>Period:</strong>
+  <strong>曜日・時限:</strong>
   <%= @lecture.period %>
 </p>
 
 <p>
-  <strong>Attendance:</strong>
+  <strong>出席:</strong>
   <%= @lecture.attendance %>
 </p>
+
+
+</div>
+
+<div></div>
+
+</div> 
+
+
+
 
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> 
 
@@ -59,10 +78,10 @@
       <td><%= user_voice.satisfaction %></td>
     </p>
     <% @user_id = {:lecture_id => @lecture.id, :user_voice_id => user_voice.id} %>
-    <td><%= link_to 'Destroy', lecture_user_voice_path(@user_id) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to '削除', lecture_user_voice_path(@user_id) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% end %>
 <% end %>
 
-<%= link_to 'New comment', new_lecture_user_voice_path(@lecture) %>
+<%= link_to 'コメント・評価する', new_lecture_user_voice_path(@lecture) %>
 
 <%= link_to 'Back', lectures_path %>
