@@ -54,16 +54,18 @@
    <% @user_voice.each do |user_voice| %>
       <% man = user_voice.satisfaction %>
       <% sum = sum + man %>
-      <% num = num + 1 %>  
+      <% if user_voice.satisfaction != 0 %>
+        <% num = num + 1 %>  
+      <% end %>
    <% end %>
   
-   <% ave = sum / num %>
+    <% ave = sum / num %>
    <p>
       <strong>平均満足度:</strong>
-      <td><%= ave %></td>
+      <td><%= ave.round(2) %></td>
     </p>
-
 <% end %>
+
 
 <% if @lecture.user_voices.any? %>
   <% @user_voice.each do |user_voice| %>
@@ -73,8 +75,17 @@
     </p>
     <p>
       <strong>満足度:</strong>
-      <td><%= user_voice.satisfaction %></td>
+      <% if user_voice.satisfaction == 0 %>
+      <td>--</td>
+      <% else %>
+        <td><%= user_voice.satisfaction  %></td>
+      <% end %>
     </p>
+    <p>
+      <strong>投稿日:</strong>
+      <td><%= user_voice.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+    </p>
+
     <% @user_id = {:lecture_id => @lecture.id, :user_voice_id => user_voice.id} %>
     <td><%= link_to 'Destroy', lecture_user_voice_path(@user_id) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% end %>
