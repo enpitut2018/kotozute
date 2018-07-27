@@ -90,17 +90,17 @@
        <% end %>
 
        <% if num != 0 %>
-         <% ave = sum / num %>
+         <% ave = sum.to_f / num %>
        <% else %>
          <% ave = sum %>
        <% end %>
        <p>
           <strong>平均満足度:</strong>
-          <td><%= ave %></td>
+          <td><%= ave.round(2) %></td>
         </p>
 
     <% end %>
-
+    <%= link_to '新しい言伝（授業満足度・コメント）を残す', new_lecture_user_voice_path(@lecture) %>
     <% if @lecture.user_voices.any? %>
       <table border="1" width="100%">
       <% @user_voice.each_with_index.reverse_each do |user_voice,i| %>
@@ -120,7 +120,7 @@
       </table>
     <% end %>
 
-    <%= link_to 'New comment', new_lecture_user_voice_path(@lecture) %>
+    
     
     <%= link_to 'Back', lectures_path %>
   </div>
