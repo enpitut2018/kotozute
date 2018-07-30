@@ -30,7 +30,7 @@ class UserVoicesController < ApplicationController
 
     respond_to do |format|
       if @user_voice.save
-        format.html { redirect_to @lecture, notice: 'user_voice was successfully created.' }
+        format.html { redirect_to @lecture}
         format.json { render :show, status: :created, location: @user_voice }
       else
         format.html { render :new }
