@@ -18,15 +18,15 @@ https://kotozute.herokuapp.com
 [桧山莉沙](https://github.com/LisaHiyama)  
 [齊藤駿平](https://github.com/pe50)  
 
-##　　リリースノート
-#7/24
+## リリースノート
+# 7/24
 チーム全体での環境構築
 
-#7/25
+# 7/25
 
 
-#7/26
+# 7/26
 
 
-#7/27
+# 7/27
 
