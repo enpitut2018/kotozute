@@ -36,7 +36,7 @@
   <tbody>
     <% @lectures.each do |lecture| %>
       <tr>
-          <td width="200"><%= link_to lecture.class_name, lecture %></td>
+          <td width="200"><%= link_to lecture.class_name, lecture_path(lecture) %></td>
           <td width="150"><%= lecture.class_id %></td>
           <td width="600"><%= lecture.contents %></td>
           <td width="150"><%= lecture.grade %></td>

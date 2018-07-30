@@ -102,16 +102,25 @@
     <%= link_to '新しい言伝（授業満足度・コメント）を残す', new_lecture_user_voice_path(@lecture) %>
     <% if @lecture.user_voices.any? %>
       <table border="1" width="100%">
+      <thead>
+      <tr>
+        <th bgcolor="white">番号</th>
+        <th bgcolor="white">コメント</th>
+        <th bgcolor="white">満足度</th>
+        <th bgcolor="white">投稿日</th>
+        <th bgcolor="white">削除</th>
+      </tr>
+      </thead>
       <% @user_voice.each_with_index.reverse_each do |user_voice,i| %>
         <tr>
           <td width="5%"><%= i+1 =%></td>
-          <td width="85%"><%= user_voice.comment %></td>
+          <td width="75%"><%= user_voice.comment %></td>
           <% if user_voice.satisfaction == 0 %>
             <td width="10%">--</td>
           <% else %>
             <td width="10%"><%= user_voice.satisfaction  %></td>
           <% end %>
- 
+          <td width="10%"><%= user_voice.created_at.strftime('%Y/%m/%d %H:%M') %></td>
           <% @user_id = {:lecture_id => @lecture.id, :user_voice_id => user_voice.id} %>
           <td width="10%"><%= link_to 'Destroy', lecture_user_voice_path(@user_id) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
@@ -120,6 +129,5 @@
     <% end %>
 
     <hr>
-    <div><%= link_to '検索結果一覧に戻る', :back %></div><br>
-  </div>
+    <div><%= link_to '言伝TOP', root_path %></div>
 </body>

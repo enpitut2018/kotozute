@@ -2,4 +2,4 @@
 
 <h2>これから講義を受ける人たちへためになる言葉を残そう！</h2>
 <%= render 'opinion', user_voice: @user_voice %>
-<%= link_to 'Back', lectures_path %>
+<%= link_to 'Back', lecture_path(params[:lecture_id]) %>
