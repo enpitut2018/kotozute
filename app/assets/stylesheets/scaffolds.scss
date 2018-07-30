@@ -23,7 +23,7 @@ a {
   color: #000;
 
   &:visited {
-    color: #666;
+    color: rgb(200, 200, 200);
   }
 
   &:hover {
@@ -52,16 +52,17 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: pink;
   display: table;
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 2px solid pink;
   padding: 7px 7px 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
+  color: crimson;
 
   h2 {
     text-align: left;
@@ -69,7 +70,7 @@ div {
     padding: 5px 5px 5px 15px;
     font-size: 12px;
     margin: -7px -7px 0;
-    background-color: #c00;
+    background-color: pink;
     color: #fff;
   }
 
@@ -78,6 +79,8 @@ div {
     list-style: square;
   }
 }
+
+a.acolor:visited {color: rgb(83, 83, 83);}
 
 label {
   display: block;
