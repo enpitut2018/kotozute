@@ -4,13 +4,13 @@
   <div>
     <h2><%= @lecture.class_name %><h2>
   </div>
-  
+
   <div class="center" id="class_detail">
     <p>授業情報　<%= link_to '(編集)', edit_lecture_path(@lecture) %> </p>
     <table border="1" width="90%">
       <tr>
-        <td><strong>科目名</strong></td>
-        <td><%= @lecture.class_name %></td>
+        <td width="17%"><strong>科目名</strong></td>
+        <td width="73%"><%= @lecture.class_name %></td>
       </tr>
       <tr>
         <td><strong>科目番号</strong></td>
@@ -73,45 +73,56 @@
         <td><%= @lecture.e_name %></td>
       </tr>
     </table>
-    
+
   </div>
 
   <div id="class_comment">
     <% if @lecture.user_voices.any? %>
-       <% sum = 0 %>
-       <% num = 0 %>
-       <% @user_voice.each do |user_voice| %>
-          <% man = user_voice.satisfaction %>
-          <% sum = sum + man %>
-          <% if user_voice.satisfaction != 0 %>
-            <% num = num + 1 %>  
-          <% end %>
-       <% end %>
+      <% sum = 0 %>
+      <% num = 0 %>
+      <% @user_voice.each do |user_voice| %>
+        <% man = user_voice.satisfaction %>
+        <% sum = sum + man %>
+        <% if user_voice.satisfaction != 0 %>
+          <% num = num + 1 %>
+        <% end %>
+      <% end %>
 
-       <% if num != 0 %>
-         <% ave = sum.to_f / num %>
-       <% else %>
-         <% ave = sum %>
-       <% end %>
-       <p>
-          <strong>平均満足度:</strong>
-          <td><%= ave.round(2) %></td>
-        </p>
+      <% if num != 0 %>
+        <% ave = sum.to_f / num %>
+      <% else %>
+        <% ave = sum %>
+      <% end %>
+
+      <% star = 100 * ave.round(2) / 5 %>
+      <p>
+        <strong>平均満足度</strong>
+        <div class="star-rating">
+          <div class="star-rating-front" style="width: <%= star.round(2) %>%">★★★★★</div>
+          <div class="star-rating-back">★★★★★</div>
+        </div>
+      </p>
 
     <% end %>
     <%= link_to '新しい言伝（授業満足度・コメント）を残す', new_lecture_user_voice_path(@lecture) %>
     <% if @lecture.user_voices.any? %>
       <table border="1" width="100%">
-      <% @user_voice.each_with_index.reverse_each do |user_voice,i| %>
+      <% @user_voice.each_with_index do |user_voice,i| %>
         <tr>
-          <td width="5%"><%= i+1 =%></td>
+          <td width="5%"><%= @user_voice.size - i =%></td>
           <td width="85%"><%= user_voice.comment %></td>
           <% if user_voice.satisfaction == 0 %>
             <td width="10%">--</td>
           <% else %>
-            <td width="10%"><%= user_voice.satisfaction  %></td>
+            <% user_star = 100 * user_voice.satisfaction.to_f / 5 %>
+            <td width="10%">
+              <div class="star-rating">
+                <div class="star-rating-front" style="width: <%= user_star.round(2) %>%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div>
+              </div>
+            </td>
           <% end %>
- 
+
           <% @user_id = {:lecture_id => @lecture.id, :user_voice_id => user_voice.id} %>
           <td width="10%"><%= link_to 'Destroy', lecture_user_voice_path(@user_id) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>

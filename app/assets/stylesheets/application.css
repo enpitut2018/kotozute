@@ -29,3 +29,26 @@ thead{
   top: 0;
   z-index: 2;
 }
+
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+}
+
+.star-rating-front {
+  position: absolute;
+  z-index: 2;
+  top: 6px;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+}
+
+.star-rating-back {
+  position: absolute;
+  z-index: 1;
+  top: 6px;
+  color: #ccc;
+}
