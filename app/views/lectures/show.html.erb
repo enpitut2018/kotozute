@@ -109,7 +109,7 @@
       <table border="1" width="100%">
       <% @user_voice.each_with_index do |user_voice,i| %>
         <tr>
-          <td width="5%"><%= i+1 =%></td>
+          <td width="5%"><%= @user_voice.size - i =%></td>
           <td width="85%"><%= user_voice.comment %></td>
           <% if user_voice.satisfaction == 0 %>
             <td width="10%">--</td>
