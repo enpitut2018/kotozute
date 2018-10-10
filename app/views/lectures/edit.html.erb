@@ -1,6 +1,7 @@
+<% content_for :title do %>言伝-ページ編集-<% end %>
+
 <h1>編集： 講義情報</h1>
 
 <%= render 'form', lecture: @lecture %>
 
 <%= link_to 'Back', lecture_path(@lecture) %>
-

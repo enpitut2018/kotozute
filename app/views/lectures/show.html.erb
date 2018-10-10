@@ -1,3 +1,5 @@
+<% content_for :title do %>言伝-<%= @lecture.class_name %>-<% end %>
+
 <p id="notice"><%= notice %></p>
 
 <body>
@@ -117,7 +119,7 @@
         <th bgcolor="white">削除</th>
       </tr>
       </thead>
-      
+
       <% @user_voice.each_with_index do |user_voice,i| %>
         <tr>
           <td width="5%"><%= @user_voice.size - i =%></td>
