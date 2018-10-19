@@ -2,7 +2,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1><a href="https://kotozute.herokuapp.com">言伝~Kotozute~</a></h1>
+<h1><%= link_to '言伝~kotozute~', root_path %></h1>
 
 <h2>検索結果</h2>
 
@@ -34,7 +34,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-  <%= will_paginate %>
+  <%= will_paginate  %>
   <tbody>
     <% @lectures.each do |lecture| %>
       <tr>
