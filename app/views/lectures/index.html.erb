@@ -31,7 +31,8 @@
       <th bgcolor="white">曜時限</th>
       <th bgcolor="white">担当</th>
       <th bgcolor="white">単位数</th>
-      <th colspan="3"></th>
+      <th bgcolor="white">平均満足度</th>
+      <th bgcolor="white">平均楽単度</th>
     </tr>
   </thead>
   <%= will_paginate %>
@@ -46,7 +47,21 @@
           <td width="100"><%= lecture.room %></td>
           <td width="100"><%= lecture.period %></td>
           <td width="300"><%= lecture.professer %></td>
-          <td width="200"><%= lecture.unit %></td>
+          <td width="50"><%= lecture.unit %></td>
+          <td width="100">
+            <% satisfaction_star = 100 * lecture.satisfaction_ave / 5 %>
+            <div class="star-rating">
+              <div class="star-rating-front" style="width: <%= satisfaction_star.round(2) %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
+            </div>
+          </td>
+          <td width="100">
+            <% easy_star = 100 * lecture.easy_ave / 5 %>
+            <div class="star-rating">
+              <div class="star-rating-front" style="width: <%= easy_star.round(2) %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
+            </div>
+          </td>
       </tr>
     <% end %>
   </tbody>
