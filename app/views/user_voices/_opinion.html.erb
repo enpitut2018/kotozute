@@ -26,7 +26,18 @@
       </div>
   
     <div class="actions">
-      
+
+    <div class="field">
+      <%= form.label :easiness, "楽単度" %>
+      <label><%= form.radio_button :easiness, "--" , {:checked => true}%>--</label>
+      <label><%= form.radio_button :easiness, "1" %>1</label>
+      <label><%= form.radio_button :easiness, "2" %>2</label>
+      <label><%= form.radio_button :easiness, "3" %>3</label>
+      <label><%= form.radio_button :easiness, "4" %>4</label>
+      <label><%= form.radio_button :easiness, "5" %>5</label>
+      </div>
+    <div class="actions">
+
       <%= form.submit(["言伝を残す"]) %>
     </div>
   <% end %>
