@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181017053254) do
+ActiveRecord::Schema.define(version: 20181024043051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20181017053254) do
     t.bigint "lecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "easiness"
     t.index ["lecture_id"], name: "index_user_voices_on_lecture_id"
   end
 
