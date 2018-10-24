@@ -115,6 +115,7 @@
         <th bgcolor="white">番号</th>
         <th bgcolor="white">コメント</th>
         <th bgcolor="white">満足度</th>
+        <th bgcolor="white">楽単度</th>
         <th bgcolor="white">投稿日</th>
         <th bgcolor="white">削除</th>
       </tr>
@@ -136,6 +137,18 @@
               </div>
             </td>
           <% end %>
+
+        <% if user_voice.easiness == 0 %>
+          <td width="10%">--</td>
+        <% else %>
+          <% user_star = 100 * user_voice.easiness.to_f / 5 %>
+          <td width="10%">
+            <div class="star-rating">
+              <div class="star-rating-front" style="width: <%= user_star.round(2) %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
+            </div>
+          </td>
+        <% end %>
 
           <td width="10%"><%= user_voice.created_at.strftime('%Y/%m/%d %H:%M') %></td>
           <% @user_id = {:lecture_id => @lecture.id, :user_voice_id => user_voice.id} %>
