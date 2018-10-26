@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181019071829) do
+ActiveRecord::Schema.define(version: 20181024043051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20181019071829) do
     t.text "contents"
     t.text "remarks"
     t.text "e_name"
+    t.float "satisfaction_ave"
+    t.float "easy_ave"
   end
 
   create_table "user_voices", force: :cascade do |t|
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 20181019071829) do
     t.bigint "lecture_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "easiness"
     t.index ["lecture_id"], name: "index_user_voices_on_lecture_id"
   end
 
