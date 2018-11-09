@@ -24,7 +24,7 @@ class UserVoicesController < ApplicationController
   # POST /user_voices
   # POST /user_voices.json
   def create
-    @lecture = Lecture.find(params[:lecture_id])  
+    @lecture = Lecture.find(params[:lecture_id])
     @user_voice = @lecture.user_voices.build(user_voice_params)
     # @user_voice = UserVoice.new(user_voice_params)
 
@@ -56,15 +56,15 @@ class UserVoicesController < ApplicationController
   # DELETE /user_voices/1
   # DELETE /user_voices/1.json
   def destroy
-    # p "-----------------" 
+    # p "-----------------"
     # p @user_id
     # p "-----------------"
-    
+
     #@user_voice = @lecture.user_voice.find(params[:user_voice_id])
     @lecture = Lecture.find(params[:id])
-    # p "-----------------" 
+    # p "-----------------"
     # p @lecture
-    # p "-----------------" 
+    # p "-----------------"
     @user_voice = UserVoice.find_by(id:params[:user_voice_id])
     @user_voice.destroy
     respond_to do |format|
@@ -76,7 +76,7 @@ class UserVoicesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user_voice
-      #@lecture = Lecture.find(params[:lecture_id])  
+      #@lecture = Lecture.find(params[:lecture_id])
       #@user_voice = user_voices.find(params[:id])
     end
 
@@ -85,5 +85,3 @@ class UserVoicesController < ApplicationController
       params.require(:user_voice).permit(:comment, :satisfaction, :easiness)
     end
 end
-
-

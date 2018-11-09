@@ -49,6 +49,35 @@
           <td width="300"><%= lecture.professer %></td>
           <td width="50"><%= lecture.unit %></td>
           <td width="100">
+            <% sum1 = 0 %>
+            <% count1 = 0 %>
+            <% sum2 = 0 %>
+            <% count2 = 0 %>
+            <% @user_voices = lecture.user_voices %>
+            <% @user_voices.each do |voice| %>
+              <% if voice.satisfaction != 0 %>
+                <% sum1 += voice.satisfaction %>
+                <% count1 += 1 %>
+              <% end %>
+              <% if voice.easiness != 0 %>
+                <% sum2 += voice.easiness %>
+                <% count2 += 1 %>
+              <% end %>
+            <% end %>
+
+            <% if count1 != 0 %>
+              <% satisfaction_ave = sum1.to_f / count1 %>
+            <% else %>
+              <% satisfaction_ave = sum1 %>
+            <% end %>
+
+            <% if count1 != 0 %>
+              <% easy_ave = sum2.to_f / count2 %>
+            <% else %>
+              <% easy_ave = sum2 %>
+            <% end %>
+
+            <% lecture.satisfaction_ave = satisfaction_ave.round(2) %>
             <% satisfaction_star = 100 * lecture.satisfaction_ave / 5 %>
             <div class="star-rating">
               <div class="star-rating-front" style="width: <%= satisfaction_star.round(2) %>%">★★★★★</div>
@@ -56,7 +85,8 @@
             </div>
           </td>
           <td width="100">
-            <% easy_star = 100 * lecture.easy_ave / 5 %>
+            <% lecture.easy_ave = easy_ave.round(2) %>
+            <% easy_star = 100 * easy_ave / 5 %>
             <div class="star-rating">
               <div class="star-rating-front" style="width: <%= easy_star.round(2) %>%">★★★★★</div>
               <div class="star-rating-back">★★★★★</div>
