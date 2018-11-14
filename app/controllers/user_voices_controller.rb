@@ -1,5 +1,6 @@
 class UserVoicesController < ApplicationController
     before_action :set_user_voice, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!, only: [:new]
 
   # GET /user_voices
   # GET /user_voices.json
