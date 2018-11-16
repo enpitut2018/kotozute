@@ -18,10 +18,12 @@
         <td><strong>科目番号</strong></td>
         <td><%= @lecture.class_id %></td>
       </tr>
+      <% if false %>
       <tr>
         <td><strong>評価方法</strong></td>
         <td><%= @lecture.evaluation %></td>
       </tr>
+      <% end %>
       <tr>
         <td><strong>年次</strong></td>
         <td><%= @lecture.grade %></td>
@@ -30,10 +32,12 @@
         <td><strong>学期</strong></td>
         <td><%= @lecture.module %></td>
       </tr>
+      <% if false %>
       <tr>
         <td><strong>開設学類</strong></td>
         <td><%= @lecture.department %></td>
       </tr>
+      <% end %>
       <tr>
         <td><strong>教室</strong></td>
         <td><%= @lecture.room %></td>
@@ -42,10 +46,12 @@
         <td><strong>曜時限</strong></td>
         <td><%= @lecture.period %></td>
       </tr>
+      <% if false %>
       <tr>
         <td><strong>出席方法</strong></td>
         <td><%= @lecture.attendance %></td>
       </tr>
+      <% end %>
       <tr>
         <td><strong>担当</strong></td>
         <td><%= @lecture.professer %></td>
