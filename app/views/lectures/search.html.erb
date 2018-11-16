@@ -1,10 +1,20 @@
 <head>
+<meta charset="UTF-8";>
+<link rel="stylesheet" href="style.scss">
 <style>
-div {position:absolute; top:150px;left:300px;}
-h1 {font-size: 50px; font-family:'游明朝体','Brush Script MT'; font-style:italic;}
+h1 {
+    font-size: 50px;
+    font-family: 'Times';
+    font-style: italic;
+}
 </style>
+
 </head>
 
+<div align="right">
+<a href="https://kotozute.herokuapp.com/users/sign_up">アカウント登録</a>
+<a href="https://kotozute.herokuapp.com/users/sign_in">ログイン</a>
+</div>
 
 <div align="center">
 
@@ -32,12 +42,11 @@ h1 {font-size: 50px; font-family:'游明朝体','Brush Script MT'; font-style:it
   <% end %>
 <%= yield %>
 
-  <p>言伝 -Kotozute- は「この講義思ってたのと違う・・・」を解決したい 筑波大生向けの感想機能つきシラバスです。 <br>
-  授業に関するコメントや、満足度を入力・閲覧することができ、 KdBと違ってシラバスにない情報まで知る事ができます。
+  <p>
+  「どの講義を取ればいいか分からない・・・」を解決したい 履修登録期間中の筑波大生向けの感想機能つきシラバスのkotozuteです。<br>
+  これは授業に関するコメントや、満足度と楽単度を入力・閲覧することができ、 KdBと違ってシラバスにない情報まで知る事ができます。<br>
+  また、「みんなのキャンパス」のような掲示板と違って筑波大生に特化した検索機能を用いて授業を探すことができます。
   </p>
-
-  <p>アカウント登録は<%= link_to 'こちら', new_user_registration_path %></p>
-  <p>ログインは<%= link_to 'そちら', new_user_session_path %></p>
 
 
 </tbody>
