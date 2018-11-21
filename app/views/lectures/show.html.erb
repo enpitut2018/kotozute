@@ -188,5 +188,16 @@
     <% end %>
 
     <hr>
+    <%= form_for(@lecture) do |f| %>
+      <div class="form-group">
+        <%= f.label :lecture, :tag_list %>
+        <%= f.text_field :tag_list, value: @lecture.tag_list.join(','), class: "form-control" %>
+      </div>
+      <div class="pull-right">
+        <%= f.submit '登録する', class: "btn btn-info" %>
+      </div>
+    <% end %>
+
+
     <div><%= link_to '言伝TOP', root_path %></div>
 </body>
