@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+body{
+    font: 14px/1.6 "Hiragino Kaku Gothic Pro",Osaka,"メイリオ","ＭＳ Ｐゴシック","MS PGothic",Verdana,Arial,sans-serif;
+    margin:0;
+    color:#313131;
+    }
+ 
+    
+img{
+outline:none;
+border-style:none;
+}
+
+
+a{
+    color:blue;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+a:visited{
+    color:blue;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+a:hover {
+    color: #F5A862;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+/*****HEADER*****/
+header{
+    display: block;
+    width:60%;
+    margin-left: 20%;
+    overflow: hidden;
+}
+header h1{
+    font-size:120%;
+    color:#313131;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border:1px solid #313131;
+    border-radius: 5px;
+    letter-spacing: 3px;
+    font-weight:400;
+    float: left;
+}
+header p{
+    font-size:100%;
+    color:#313131;
+    float: left;
+}
