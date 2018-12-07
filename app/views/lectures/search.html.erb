@@ -1,15 +1,15 @@
+<!doctype html>
+<html lang="ja">
+
 <head>
 <meta charset="UTF-8";>
-<link rel="stylesheet" href="style.scss">
-<style>
-h1 {
-    font-size: 50px;
-    font-family: 'Times';
-    font-style: italic;
-}
-</style>
-
+<link rel="stylesheet" href="asset/stylesheets/style.scss">
 </head>
+
+<body>
+<header>
+  <h1>KOTOZUTE</h1>
+</header>
 
 <div align="right">
 <a href="https://kotozute.herokuapp.com/users/sign_up">アカウント登録</a>
@@ -18,7 +18,7 @@ h1 {
 
 <div align="center">
 
-<h1>言伝 ~Kotozute~</h1>
+
 
 <tbody>
 <%= form_tag lectures_path, :method => 'get' do %>
@@ -52,3 +52,6 @@ h1 {
 </tbody>
 
 </div>
+
+</body>
+</html>
