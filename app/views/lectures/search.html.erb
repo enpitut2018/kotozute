@@ -11,13 +11,19 @@
   <h1>KOTOZUTE</h1>
 </header>
 
-<div align="right">
-<a href="https://kotozute.herokuapp.com/users/sign_up">アカウント登録</a>
-<a href="https://kotozute.herokuapp.com/users/sign_in">ログイン</a>
+<div id="branding">
+  <p> 「自由単としてどの講義を履修するか迷う」を解決したい 履修登録期間中の筑波大生向けの授業検索アプリです。</p>
+  <p>実際にその授業を受けた人からの情報をもとに自由単を見つけることができます。</p>
 </div>
 
-<div align="center">
-
+<nav>
+  <ul style="list-style:none">
+    <li><a href="#">ホーム</a></li>
+    <li><a href="#">ヘルプ</a></li>
+    <li><a href="https://kotozute.herokuapp.com/users/sign_up">アカウント登録</a></li>
+    <li><a href="https://kotozute.herokuapp.com/users/sign_in">ログイン</a></li>
+  </ul>
+</nav>
 
 
 <tbody>
@@ -51,19 +57,12 @@
       時限
       <%= select_tag 'period_search', options_for_select([["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"],["7", "7"],["8","8"]]), :prompt => "選択なし" %>
     </p>
-  <% end %>
+<% end %>
 <%= yield %>
 
-  <p>
-  「どの講義を取ればいいか分からない・・・」を解決したい 履修登録期間中の筑波大生向けの感想機能つきシラバスのkotozuteです。<br>
-  これは授業に関するコメントや、満足度と楽単度を入力・閲覧することができ、 KdBと違ってシラバスにない情報まで知る事ができます。<br>
-  また、「みんなのキャンパス」のような掲示板と違って筑波大生に特化した検索機能を用いて授業を探すことができます。
-  </p>
 
 
 </tbody>
-
-</div>
 
 </body>
 </html>
