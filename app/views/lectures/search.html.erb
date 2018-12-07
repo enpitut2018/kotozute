@@ -21,7 +21,19 @@ h1 {
 <h1>言伝 ~Kotozute~</h1>
 
 <tbody>
+<!--
 <%= form_tag lectures_path, :method => 'get' do %>
+    <p>
+      タグ<%= text_field_tag 'tag_search' %>
+      <%= submit_tag "検索", :name => nil %>
+      <br>
+  <% end %>
+<%= yield %>
+-->
+<%= form_tag lectures_path, :method => 'get' do %>
+    <p>
+    タグ<%= text_field_tag 'tag_search' %>
+    <br>
     <p>
       科目名<%= text_field_tag 'name_search' %>
       <%= submit_tag "検索", :name => nil %>
@@ -34,7 +46,7 @@ h1 {
       <br>
       曜日
       <%= select_tag 'day_search', options_for_select([["月", "月"], ["火", "火"], ["水", "水"], ["木", "木"], ["金", "金"], ["土", "土"],["日", "日"],["集中","集中"],["応談","応談"],["随時","随時"]]), :prompt => "選択なし" %>
-      
+
 
       時限
       <%= select_tag 'period_search', options_for_select([["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"],["7", "7"],["8","8"]]), :prompt => "選択なし" %>
