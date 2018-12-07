@@ -7,7 +7,7 @@
     既存のkdbやみんなのキャンパス(楽天)のようなサイトとは異なり、自由単に特化した検索機能を備えています。
 
 ## サービスのURL
-https://kotozute.herokuapp.com
+https://kotozute10.herokuapp.com
 
 ## メンバー
 [永瀬拓也](https://github.com/NagaTaku)  
