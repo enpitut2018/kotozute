@@ -18,82 +18,89 @@
   <%= yield %>
 
 </tbody>
-<table class="search_result" border="1">
-  <thead>
-    <tr>
-      <th bgcolor="white">授業名</th>
-      <th bgcolor="white">科目番号</th>
-      <th bgcolor="white">概要</th>
-      <th bgcolor="white">年次</th>
-      <th bgcolor="white">学期</th>
-      <th bgcolor="white">教室</th>
-      <th bgcolor="white">曜時限</th>
-      <th bgcolor="white">担当</th>
-      <th bgcolor="white">単位数</th>
-      <th bgcolor="white">平均満足度</th>
-      <th bgcolor="white">平均楽単度</th>
-    </tr>
-  </thead>
-  <%= will_paginate  %>
-  <tbody>
-    <% @lectures.each do |lecture| %>
+
+<% if @lectures.empty? %>
+  <p> 検索結果がありません </p>
+<% else %>
+  <table class="search_result" border="1">
+    <thead>
       <tr>
-          <td width="200"><%= link_to lecture.class_name, lecture_path(lecture) %></td>
-          <td width="150"><%= lecture.class_id %></td>
-          <td width="600"><%= lecture.contents %></td>
-          <td width="150"><%= lecture.grade %></td>
-          <td width="100"><%= lecture.module %></td>
-          <td width="100"><%= lecture.room %></td>
-          <td width="100"><%= lecture.period %></td>
-          <td width="300"><%= lecture.professer %></td>
-          <td width="50"><%= lecture.unit %></td>
-          <td width="100">
-            <% sum1 = 0 %>
-            <% count1 = 0 %>
-            <% sum2 = 0 %>
-            <% count2 = 0 %>
-            <% @user_voices = lecture.user_voices %>
-            <% @user_voices.each do |voice| %>
-              <% if voice.satisfaction != 0 %>
-                <% sum1 += voice.satisfaction %>
-                <% count1 += 1 %>
-              <% end %>
-              <% if voice.easiness != 0 %>
-                <% sum2 += voice.easiness %>
-                <% count2 += 1 %>
-              <% end %>
-            <% end %>
-
-            <% if count1 != 0 %>
-              <% satisfaction_ave = sum1.to_f / count1 %>
-            <% else %>
-              <% satisfaction_ave = sum1 %>
-            <% end %>
-
-            <% if count1 != 0 %>
-              <% easy_ave = sum2.to_f / count2 %>
-            <% else %>
-              <% easy_ave = sum2 %>
-            <% end %>
-
-            <% lecture.satisfaction_ave = satisfaction_ave.round(2) %>
-            <% satisfaction_star = 100 * lecture.satisfaction_ave / 5 %>
-            <div class="star-rating">
-              <div class="star-rating-front" style="width: <%= satisfaction_star.round(2) %>%">★★★★★</div>
-              <div class="star-rating-back">★★★★★</div>
-            </div>
-          </td>
-          <td width="100">
-            <% lecture.easy_ave = easy_ave.round(2) %>
-            <% easy_star = 100 * easy_ave / 5 %>
-            <div class="star-rating">
-              <div class="star-rating-front" style="width: <%= easy_star.round(2) %>%">★★★★★</div>
-              <div class="star-rating-back">★★★★★</div>
-            </div>
-          </td>
+        <th bgcolor="white">授業名</th>
+        <th bgcolor="white">科目番号</th>
+        <th bgcolor="white">概要</th>
+        <th bgcolor="white">年次</th>
+        <th bgcolor="white">学期</th>
+        <th bgcolor="white">教室</th>
+        <th bgcolor="white">曜時限</th>
+        <th bgcolor="white">担当</th>
+        <th bgcolor="white">単位数</th>
+        <th bgcolor="white">平均満足度</th>
+        <th bgcolor="white">平均楽単度</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <%= will_paginate  %>
+    <tbody>
+      <% @lectures.each do |lecture| %>
+        <tr>
+            <td width="200"><%= link_to lecture.class_name, lecture_path(lecture) %></td>
+            <td width="150"><%= lecture.class_id %></td>
+            <td width="600"><%= lecture.contents %></td>
+            <td width="150"><%= lecture.grade %></td>
+            <td width="100"><%= lecture.module %></td>
+            <td width="100"><%= lecture.room %></td>
+            <td width="100"><%= lecture.period %></td>
+            <td width="300"><%= lecture.professer %></td>
+            <td width="50"><%= lecture.unit %></td>
+            <td width="100">
+              <% sum1 = 0 %>
+              <% count1 = 0 %>
+              <% sum2 = 0 %>
+              <% count2 = 0 %>
+              <% @user_voices = lecture.user_voices %>
+              <% @user_voices.each do |voice| %>
+                <% if voice.satisfaction != 0 %>
+                  <% sum1 += voice.satisfaction %>
+                  <% count1 += 1 %>
+                <% end %>
+                <% if voice.easiness != 0 %>
+                  <% sum2 += voice.easiness %>
+                  <% count2 += 1 %>
+                <% end %>
+              <% end %>
+
+              <% if count1 != 0 %>
+                <% satisfaction_ave = sum1.to_f / count1 %>
+              <% else %>
+                <% satisfaction_ave = sum1 %>
+              <% end %>
+
+              <% if count1 != 0 %>
+                <% easy_ave = sum2.to_f / count2 %>
+              <% else %>
+                <% easy_ave = sum2 %>
+              <% end %>
+
+              <% lecture.satisfaction_ave = satisfaction_ave.round(2) %>
+              <% satisfaction_star = 100 * lecture.satisfaction_ave / 5 %>
+              <div class="star-rating">
+                <div class="star-rating-front" style="width: <%= satisfaction_star.round(2) %>%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div>
+              </div>
+            </td>
+            <td width="100">
+              <% lecture.easy_ave = easy_ave.round(2) %>
+              <% easy_star = 100 * easy_ave / 5 %>
+              <div class="star-rating">
+                <div class="star-rating-front" style="width: <%= easy_star.round(2) %>%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div>
+              </div>
+            </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>
+  
 
 <br>
