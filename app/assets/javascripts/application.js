@@ -13,3 +13,6 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap
+//= require bootstrap-tagsinput
+//= require bootstrap-tagsinput.min
