@@ -27,22 +27,13 @@
 
 
 <tbody>
-<!--
 <%= form_tag lectures_path, :method => 'get' do %>
     <p>
-      タグ<%= text_field_tag 'tag_search' %>
-      <%= submit_tag "検索", :name => nil %>
-      <br>
-  <% end %>
-<%= yield %>
--->
-<%= form_tag lectures_path, :method => 'get' do %>
-    <p>
-    タグ<%= text_field_tag 'tag_search' %>
+      <%= text_field_tag "tag_search", '',{placeholder: "タグを入力",id: "sbox"}  %>
     <br>
     <p>
-      科目名<%= text_field_tag 'name_search' %>
-      <%= submit_tag "検索", :name => nil %>
+      <%= text_field_tag 'name_search','',{placeholder: "授業名を入力",id: "sbox"} %>
+
       <br>
       モジュール
       <%= select_tag 'module_search', options_for_select([["春A", "春A"], ["春B", "春B"], ["春C", "春C"], ["夏季休業中", "夏季休業中"],["秋A", "秋A"], ["秋B", "秋B"], ["秋C", "秋C"], ["春季休業中", "春季休業中"]]), :prompt => "選択なし" %>
@@ -57,6 +48,7 @@
       時限
       <%= select_tag 'period_search', options_for_select([["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"],["7", "7"],["8","8"]]), :prompt => "選択なし" %>
     </p>
+    <%= button_tag "検索", id: "sbtn", :name => nil %>
 <% end %>
 <%= yield %>
 
