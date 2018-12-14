@@ -195,15 +195,14 @@
 
     <hr>
     <%= form_for(@lecture) do |f| %>
-      <div class="form-group">
-        <%= f.label :lecture, :tag_list %>
-        <%= f.text_field :tag_list, value: @lecture.tag_list.join(','), class: "form-control" %>
+      <div class="field">
+        <%= f.label :tag_list, "授業タグ" %><br>
+        <%= text_field_tag 'lecture[tag_list]', @lecture.tag_list.join(','), "data-role" => "tagsinput" %>
       </div>
       <div class="pull-right">
         <%= f.submit '登録する', class: "btn btn-info" %>
       </div>
     <% end %>
-
 
     <div><%= link_to '言伝TOP', root_path %></div>
 </body>

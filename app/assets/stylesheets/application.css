@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
+ *= require bootstrap-tagsinput
  */
 
  @charset "UTF-8";
