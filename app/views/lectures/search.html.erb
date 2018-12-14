@@ -17,9 +17,11 @@
 <nav>
   <ul style="list-style:none">
     <li><a href="#">ホーム</a></li>
-    <li><a href="#">ヘルプ</a></li>
+
+    <li><a href="static_pages/help">ヘルプ</a></li>
     <li><a href="users/sign_up">アカウント登録</a></li>
     <li><a href="users/sign_in">ログイン</a></li>
+
   </ul>
 </nav>
 
@@ -33,11 +35,12 @@
     
     <br>
       モジュール
-      <%= select_tag 'module_search', options_for_select([["春A", "春A"], ["春B", "春B"], ["春C", "春C"], ["夏季休業中", "夏季休業中"],["秋A", "秋B"], ["秋C", "秋C"], ["春季休業中", "春季休業中"]]), :prompt => "選択なし" , :id => "pulldown"%>
-    <br>
-     年次
-      <%= select_tag 'grade_search', options_for_select([["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"]]), :prompt => "選択なし" ,:id => "pulldown"%>
-    <br>
+      <%= select_tag 'module_search', options_for_select([["春A", "春A"], ["春B", "春B"], ["春C", "春C"], ["夏季休業中", "夏季休業中"],["秋A", "秋A"], ["秋B", "秋B"], ["秋C", "秋C"], ["春季休業中", "春季休業中"]]), :prompt => "選択なし" %>
+      年次
+      <%= select_tag 'grade_search', options_for_select([["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"]]), :prompt => "選択なし" %>
+
+      <br>
+
       曜日
       <%= select_tag 'day_search', options_for_select([["月", "月"], ["火", "火"], ["水", "水"], ["木", "木"], ["金", "金"], ["土", "土"],["日", "日"],["集中","集中"],["応談","応談"],["随時","随時"]]), :prompt => "選択なし" ,:id => "pulldown"%>
     <br>
