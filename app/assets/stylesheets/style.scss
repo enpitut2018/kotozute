@@ -133,11 +133,11 @@ nav li:hover{
     }
     /*検索ボタン*/
     #sbtn{
-    width:70px;/*検索ボタンの横幅*/ 
-    height:50px;/*検索ボタンの縦幅*/ 
-    position:absolute;/*検索ボタンの絶対位置*/  
-    left:270px;/*検索ボタンの位置調整*/  
-    top:0;
+    width:60px;/*検索ボタンの横幅*/ 
+    height:25px;/*検索ボタンの縦幅*/ 
+    //position:absolute;/*検索ボタンの絶対位置*/  
+    //left:270px;/*検索ボタンの位置調整*/  
+    //top:0;
     border-radius:0 2px 2px 0;/*検索ボタンの角を丸める*/ 
     background:#7fbfff;/*検索ボタンの背景カラー*/ 
     border:none;/*検索ボタンの枠線を消す*/ 
