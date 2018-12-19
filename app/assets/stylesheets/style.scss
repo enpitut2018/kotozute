@@ -116,12 +116,14 @@ nav li:hover{
 
 /*フォーム全体*/
 #form1{
-    position:relative;/*フォームの相対位置*/	
+
+    /*フォームの相対位置*/	
     max-width:270px;/*フォームのサイズ*/
     margin-bottom:15px;/*フォームの下に余白*/	 	
-    }
-    /*検索ボックス*/
-    #sbox{
+}
+
+/*検索ボックス*/
+#sbox{
     //position:absolute;/*フォームの絶対位置*/	
     //left:0;
     //top:0; 	
@@ -130,9 +132,20 @@ nav li:hover{
     padding:0 10px;/*テキスト位置調整*/	 
     border-radius:20px 20px 20px 20px;/*検索ボックスの角を丸める*/		
     background:#eee;/*検索ボックスの背景カラー*/		
+}
+/*プルダウン*/
+#pulldown{
+        //width: 
+        height: 35px;
+        font-size: 14px;
+        //font-size: 1.4rem;
+        padding: 0 10px;
+        border: none;
+        position: relative;
+
     }
-    /*検索ボタン*/
-    #sbtn{
+/*検索ボタン*/
+#sbtn{
     width:60px;/*検索ボタンの横幅*/ 
     height:25px;/*検索ボタンの縦幅*/ 
     //position:absolute;/*検索ボタンの絶対位置*/  
@@ -148,4 +161,4 @@ nav li:hover{
     /*検索ボタンマウスオーバー時*/
     #sbtn:hover{
     color:#666;/*検索ボタンマウスオーバー時のフォントカラー*/ 
-    }
+}
