@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
 gem 'will_paginate'
 gem 'sprockets', '~> 3.7.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
