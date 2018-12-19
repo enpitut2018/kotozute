@@ -27,12 +27,12 @@
 
 <tbody>
 <%= form_tag lectures_path, :method => 'get',:id => 'form1' do%>
+
     <p>
       <%= text_field_tag "tag_search", '',{placeholder: "タグを入力",id: "sbox"}  %>
     <br>
     <p>
-      <%= text_field_tag 'name_search','',{placeholder: "授業名を入力",id: "sbox"} %>
-    
+      <%= text_field_tag 'name_search','',{placeholder: "授業名を入力",id: "sbox"} %>    
     <br>
       モジュール
       <%= select_tag 'module_search', options_for_select([["春A", "春A"], ["春B", "春B"], ["春C", "春C"], ["夏季休業中", "夏季休業中"],["秋A", "秋A"], ["秋B", "秋B"], ["秋C", "秋C"], ["春季休業中", "春季休業中"]]), :prompt => "選択なし" %>
