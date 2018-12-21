@@ -85,61 +85,62 @@
   </div>
 
   <div id="class_comment">
-    <% if @lecture.user_voices.any? %>
-      <% sum = 0 %>
-      <% num = 0 %>
-      <% @user_voice.each do |user_voice| %>
-        <% man = user_voice.satisfaction %>
-        <% sum = sum + man %>
-        <% if user_voice.satisfaction != 0 %>
-          <% num = num + 1 %>
+      <% if @lecture.user_voices.any? %>
+        <% sum = 0 %>
+        <% num = 0 %>
+        <% @user_voice.each do |user_voice| %>
+          <% man = user_voice.satisfaction %>
+          <% sum = sum + man %>
+          <% if user_voice.satisfaction != 0 %>
+            <% num = num + 1 %>
+          <% end %>
         <% end %>
-      <% end %>
 
-      <% if num != 0 %>
-        <% ave = sum.to_f / num %>
-      <% else %>
-        <% ave = sum %>
-      <% end %>
-
-      <% star = 100 * ave.round(2) / 5 %>
-      <p>
-        <strong>平均満足度</strong>
-        <div class="star-rating">
-          <div class="star-rating-front" style="width: <%= star.round(2) %>%">★★★★★</div>
-          <div class="star-rating-back">★★★★★</div>
-        </div>
-      </p>
-
-    <% end %>
-
-    <% if @lecture.user_voices.any? %>
-      <% sum = 0 %>
-      <% num = 0 %>
-      <% @user_voice.each do |user_voice| %>
-        <% raku = user_voice.easiness %>
-        <% sum = sum + raku %>
-        <% if user_voice.easiness != 0 %>
-          <% num = num + 1 %>
+        <% if num != 0 %>
+          <% ave = sum.to_f / num %>
+        <% else %>
+          <% ave = sum %>
         <% end %>
+
+        <% star = 100 * ave.round(2) / 5 %>
+        <p>
+          <strong>平均満足度</strong>
+          <div class="star-rating">
+            <div class="star-rating-front" style="width: <%= star.round(2) %>%">★★★★★</div>
+            <div class="star-rating-back">★★★★★</div>
+          </div>
+        </p>
+
       <% end %>
 
-      <% if num != 0 %>
-        <% ave = sum.to_f / num %>
-      <% else %>
-        <% ave = sum %>
+      <% if @lecture.user_voices.any? %>
+        <% sum = 0 %>
+        <% num = 0 %>
+        <% @user_voice.each do |user_voice| %>
+          <% raku = user_voice.easiness %>
+          <% sum = sum + raku %>
+          <% if user_voice.easiness != 0 %>
+            <% num = num + 1 %>
+          <% end %>
+        <% end %>
+
+        <% if num != 0 %>
+          <% ave = sum.to_f / num %>
+        <% else %>
+          <% ave = sum %>
+        <% end %>
+
+        <% star = 100 * ave.round(2) / 5 %>
+        <p>
+          <strong>平均楽単度</strong>
+          <div class="star-rating">
+            <div class="star-rating-front" style="width: <%= star.round(2) %>%">★★★★★</div>
+            <div class="star-rating-back">★★★★★</div>
+          </div>
+        </p>
+
       <% end %>
 
-      <% star = 100 * ave.round(2) / 5 %>
-      <p>
-        <strong>平均楽単度</strong>
-        <div class="star-rating">
-          <div class="star-rating-front" style="width: <%= star.round(2) %>%">★★★★★</div>
-          <div class="star-rating-back">★★★★★</div>
-        </div>
-      </p>
-
-    <% end %>
 
     <%= link_to '新しい言伝（授業満足度・コメント）を残す', new_lecture_user_voice_path(@lecture) %>
     <% if @lecture.user_voices.any? %>
@@ -204,4 +205,5 @@
     <% end %>
 
     <br><%= link_to '言伝TOP', search_path %>
+  </div>
 </body>
