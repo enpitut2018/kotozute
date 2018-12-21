@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: '"kotozute運営チーム" <sasakamaboko2018@gmail.com>', charset: 'iso-2022-jp'
   layout 'mailer'
 end
