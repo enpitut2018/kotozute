@@ -152,7 +152,6 @@
         <th bgcolor="white">満足度</th>
         <th bgcolor="white">楽単度</th>
         <th bgcolor="white">投稿日</th>
-        <th bgcolor="white">削除</th>
       </tr>
       </thead>
 
@@ -187,7 +186,7 @@
 
           <td width="10%"><%= user_voice.created_at.strftime('%Y/%m/%d %H:%M') %></td>
           <% @user_id = {:lecture_id => @lecture.id, :user_voice_id => user_voice.id} %>
-          <td width="10%"><%= link_to 'Destroy', lecture_user_voice_path(@user_id) , method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %></td>
+         
         </tr>
       <% end %>
       </table>
@@ -204,5 +203,5 @@
       </div>
     <% end %>
 
-    <div><%= link_to '言伝TOP', root_path %></div>
+    <br><%= link_to '言伝TOP', search_path %>
 </body>
