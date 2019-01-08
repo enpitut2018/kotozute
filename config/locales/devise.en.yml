@@ -62,3 +62,5 @@ en:
       not_saved:
         one: "1つのエラーでこの%{resource}の保存が禁止されました:"
         other: "%{count}個のエラーでこの%{resource}の保存が禁止されました:"
+  will_paginate:
+    page_gap: ‘…’
