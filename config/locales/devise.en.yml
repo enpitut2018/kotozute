@@ -63,4 +63,7 @@ en:
         one: "1つのエラーでこの%{resource}の保存が禁止されました:"
         other: "%{count}個のエラーでこの%{resource}の保存が禁止されました:"
   will_paginate:
-    page_gap: ‘…’
+    page_gap: …
+    previous_label: '&#8592; Previous&nbsp;'
+    next_label: '&nbsp;Next &#8594;'
+    
